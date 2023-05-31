@@ -2,10 +2,10 @@
 // For Firebase JS SDK v7.20.0 and later,
 // measurementId is optional
 var firebaseConfig = {
-  apiKey: "AIzaSyAv_PFCLcflPPO5NYtXkz5r-H9J2IEQzUQ",
-  authDomain: "login-demo-a03bf.firebaseapp.com",
-  projectId: "login-demo-a03bf",
-  storageBucket: "login-demo-a03bf.appspot.com",
+  apiKey: "AIzaSyA0jKuhtI4EkzJQ3iLYLzeZpUT3JcVnzXQ",
+  authDomain: "e-com-24d8c.firebaseapp.com",
+  projectId: "e-com-24d8c",
+  storageBucket: "e-com-24d8c.appspot.com",
   messagingSenderId: "831896060677",
   appId: "1:831896060677:web:a0616c95abc1bcdedf6d6c",
   measurementId: "G-XWHF8K6XSV",
