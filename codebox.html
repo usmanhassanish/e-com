@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+  <script>
+    function getCurrentTime() {
+      var now = new Date();
+      var hours = now.getHours().toString().padStart(2, '0');
+      var minutes = now.getMinutes().toString().padStart(2, '0');
+      var seconds = now.getSeconds().toString().padStart(2, '0');
+      var currentTime = hours + ':' + minutes + ':' + seconds;
+      document.getElementById('current-time').textContent = currentTime;
+    }
+
+    // Update the current time every second
+    setInterval(getCurrentTime, 1000);
+  </script>
+  
+
+ 
+</head>
+<body>
+  <header>
+    <div class="float-container">
+
+  <div class="float-child">
+    <div class="green"><img src = "free_icon_1.svg" width="40px" height="40px" alt="My Happy SVG"/></div>
+  </div>
+  
+  <div class="float-child">
+    <div  class="center">UMD</div>
+  </div>
+  <div class="float-child">
+    <div id="current-time" class="center"></div>
+  </div>
+  
+</div>
+  </header>
+
+ 
+<div class="card">Card 1</div>
+  <div class="card">Card 2</div>
+  <div class="card">Card 3</div>
+  <div class="card">Card 1</div>
+  <div class="card">Card 2</div>
+  <div class="card">Card 3</div>
+  <!-- HTML -->
+<input type="file" id="fileInput">
+<button onclick="uploadFile()">Upload</button>
+
+<!-- JavaScript -->
+<script>
+  function uploadFile() {
+    const fileInput = document.getElementById('fileInput');
+    const file = fileInput.files[0];
+
+    if (file) {
+      const formData = new FormData();
+      formData.append('file', file);
+
+      fetch('upload.php', {
+        method: 'POST',
+        body: formData
+      })
+        .then(response => response.text())
+        .then(data => {
+          console.log('File uploaded:', data);
+        })
+        .catch(error => {
+          console.error('Error:', error);
+        });
+    }
+  }
+</script>
+</body>
+</html>

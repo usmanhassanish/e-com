@@ -1,0 +1,32 @@
+<!-- HTML -->
+<form>
+  <input type="text" id="fileNameInput" placeholder="Enter File Name">
+  <button type="submit" onclick="deleteFile(event)">Delete File</button>
+</form>
+
+<!-- JavaScript -->
+<script>
+  function deleteFile(event) {
+    event.preventDefault();
+
+    const fileNameInput = document.getElementById('fileNameInput');
+    const fileName = fileNameInput.value;
+
+    if (fileName) {
+      fetch('delete_file.php', {
+        method: 'POST',
+        body: JSON.stringify({ fileName }),
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      })
+        .then(response => response.text())
+        .then(data => {
+          console.log(data);
+        })
+        .catch(error => {
+          console.error('Error:', error);
+        });
+    }
+  }
+</script>
