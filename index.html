@@ -4,23 +4,34 @@
   <title>WhatsApp Message Link</title>
 </head>
 <body>
-  <form id="whatsapp-form">
-    <input type="text" id="message-input" placeholder="Type your message...">
-    <button type="submit">Send Message on WhatsApp</button>
+  <form id="whatsapp-form-1" class="whatsapp-form">
+    <input type="text" class="message-input" placeholder="Type your message...">
+    <button type="submit" data-phone="+2348137358138">Send Message on WhatsApp</button>
   </form>
 
-  <form id="whatsapp-form">
-    <input type="text" id="message-input" placeholder="Type your message...">
-    <button type="submit">Send Message on WhatsApp</button>
+  <form id="whatsapp-form-2" class="whatsapp-form">
+    <input type="text" class="message-input" placeholder="Type your message...">
+    <button type="submit" data-phone="+2348137358138">Send Message on WhatsApp</button>
   </form>
+
+  <!-- Add more forms as needed -->
 
   <script>
-    document.getElementById("whatsapp-form").addEventListener("submit", function(event) {
+    const forms = document.getElementsByClassName("whatsapp-form");
+
+    function sendMessage(event) {
       event.preventDefault();
-      const message = encodeURIComponent(document.getElementById("message-input").value);
-      const whatsappLink = `https://api.whatsapp.com/send?phone=+2348137358138&text=${message}`;
-      window.location.href = whatsappLink;
-    });
+      const form = event.target;
+      const messageInput = form.querySelector(".message-input");
+      const message = encodeURIComponent(messageInput.value);
+      const phoneNumber = form.querySelector("button").getAttribute("data-phone");
+      const whatsappLink = `https://api.whatsapp.com/send?phone=${phoneNumber}&text=${message}`;
+      window.open(whatsappLink, "_blank");
+    }
+
+    for (let i = 0; i < forms.length; i++) {
+      forms[i].addEventListener("submit", sendMessage);
+    }
   </script>
 </body>
 </html>
