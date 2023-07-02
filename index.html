@@ -1,12 +1,21 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>WhatsApp Button Link</title>
-  <link rel="stylesheet" type="text/css" href="styles.css">
+  <title>WhatsApp Message Link</title>
 </head>
 <body>
-  <div class="whatsapp-button">
-    <a href="https://api.whatsapp.com/send?phone=PHONE_NUMBER" target="_blank">Chat on WhatsApp</a>
-  </div>
+  <form id="whatsapp-form">
+    <input type="text" id="message-input" placeholder="Type your message...">
+    <button type="submit">Send Message on WhatsApp</button>
+  </form>
+
+  <script>
+    document.getElementById("whatsapp-form").addEventListener("submit", function(event) {
+      event.preventDefault();
+      const message = encodeURIComponent(document.getElementById("message-input").value);
+      const whatsappLink = `https://api.whatsapp.com/send?phone=+2348137358138&text=${message}`;
+      window.location.href = whatsappLink;
+    });
+  </script>
 </body>
 </html>
