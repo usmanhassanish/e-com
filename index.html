@@ -1,36 +1,98 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>WhatsApp Message Link</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
 </head>
 <body>
-  <form id="whatsapp-form-1" class="whatsapp-form">
-    <input type="text" class="message-input" placeholder="Type your message...">
-    <button type="submit" data-phone="+2348137358138">Send Message on WhatsApp</button>
-  </form>
+    <header>
+        <div class="container">
+  <div class="box">
+      <div class="dropdown">
+  <button class="dropbtn"></button>
+  <div class="dropdown-content">
+    <a href="#" style="color:white;">ABOUT</a>
+    <a href="#" style="color:white">CONTACT</a>
+  </div>
+</div>
+  </div>
+  <div class="box">
+     <table>
+            <tr style="text-align: center;">
+                <td class="logo-border">
+                    <span class="bold" style="color:dodgerblue;">U</span>
+                    <span class="bold" style="color:#A52A2A;">M</span>
+                    <span class="bold"style="color:dodgerblue;">D</span>
+                </td>
+            </tr>
+            <tr>
+                <td style="border:none;" >
+                    <span style="color:#00FA9A;" id="ital">MINIMALIST <span style="color:darkmagenta;" class="hide">DESIGNS</span></span>
+                </td>
+            </tr>
+        </table>
+  </div>
+  <div class="box"></div>
+</div>
+        
+    </header>
+    
+  <div class="card-container">
+    <div class="card"><img src="four.jpeg" >
+        <form id="whatsapp-form-1" class="whatsapp-form">
+            <input type="text" class="message-input" value="shoe" readonly>
+        <button type="submit" class="order" data-phone="+2348137358138">place order</button>
+    </form>
+    </div>
+    <div class="card"><img src="one.jpeg" >
+        <form id="whatsapp-form-1" class="whatsapp-form">
+            <input type="text" class="message-input" value="shoe" readonly>
+        <button type="submit" class="order" data-phone="+2348137358138">place order</button>
+    </form>
+    </div>
+    <div class="card"><img src="two.jpeg" >
+        <form id="whatsapp-form-1" class="whatsapp-form">
+            <input type="text" class="message-input" value="jug" readonly>
+        <button type="submit" class="order" data-phone="+2348137358138">place order</button>
+    </form>
+    </div>
+    <div class="card"><img src="one.jpeg" >
+        <form id="whatsapp-form-1" class="whatsapp-form">
+            <input type="text" class="message-input" value="shoe" readonly>
 
-  <form id="whatsapp-form-2" class="whatsapp-form">
-    <input type="text" class="message-input" placeholder="Type your message...">
-    <button type="submit" data-phone="+2348137358138">Send Message on WhatsApp</button>
-  </form>
+        <button type="submit" class="order" data-phone="+2348137358138">place order</button>
+    </form>
+    </div>
+    <div class="card"><img src="two.jpeg" >
+        <form id="whatsapp-form-1" class="whatsapp-form">
+            <input type="text" class="message-input" value="jug" readonly>
+        <button type="submit" class="order" data-phone="+2348137358138">place order</button>
+    </form>
+    </div>
+    <div class="card"><img src="one.jpeg" >
+        <form id="whatsapp-form-1" class="whatsapp-form">
+            <input type="text" class="message-input" value="shoe" readonly>
+        <button type="submit" class="order" data-phone="+2348137358138">place order</button>
+    </form>
+    </div>
 
-  <form id="whatsapp-form-2" class="whatsapp-form">
-    <input type="text" class="message-input" placeholder="Type your message...">
-    <button type="submit" data-phone="+2348137358138">Send Message on WhatsApp</button>
-  </form>
-
-  <!-- Add more forms as needed -->
-
-  <script>
+      <script>
     const forms = document.getElementsByClassName("whatsapp-form");
 
     function sendMessage(event) {
       event.preventDefault();
       const form = event.target;
       const messageInput = form.querySelector(".message-input");
-      const message = encodeURIComponent(messageInput.value);
+      const userMessage = encodeURIComponent(messageInput.value);
+
+      // Add the extra string here (modify this according to your needs)
+    const extraString = "Hello! I want to buy"; // Replace [Extra Text] with your desired additional string
+    const fullMessage = extraString + userMessage;
+
       const phoneNumber = form.querySelector("button").getAttribute("data-phone");
-      const whatsappLink = `https://api.whatsapp.com/send?phone=${phoneNumber}&text=${message}`;
+      const whatsappLink = `https://api.whatsapp.com/send?phone=${phoneNumber}&text=${fullMessage}`;
       window.open(whatsappLink, "_blank");
     }
 
@@ -38,5 +100,8 @@
       forms[i].addEventListener("submit", sendMessage);
     }
   </script>
+    
+  </div>
+
 </body>
 </html>
