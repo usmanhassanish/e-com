@@ -28,8 +28,11 @@ body
 .order
 {
   width: 100%;
-  background-color: #008080;
-  color: black;
+}
+button
+{
+  background-color: black;
+  color: width;
 }
 .container {
   display: flex;
