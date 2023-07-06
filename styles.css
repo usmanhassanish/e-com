@@ -28,6 +28,8 @@ body
 .order
 {
   width: 100%;
+  background-color: #008080;
+  color: white;
 }
 .container {
   display: flex;
