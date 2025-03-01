@@ -1,107 +1,53 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <link rel="stylesheet" type="text/css" href="styles.css">
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title></title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 <body>
-    <header>
-        <div class="container">
-  <div class="box">
-      <div class="dropdown">
-  <button class="dropbtn"></button>
-  <div class="dropdown-content">
-    <a href="#" style="color:white;">ABOUT</a>
-    <a href="#" style="color:white">CONTACT</a>
-  </div>
-</div>
-  </div>
-  <div class="box">
-     <table>
-            <tr style="text-align: center;">
-                <td class="logo-border">
-                    <span class="bold" style="color:dodgerblue;">U</span>
-                    <span class="bold" style="color:#A52A2A;">M</span>
-                    <span class="bold"style="color:dodgerblue;">D</span>
-                </td>
-            </tr>
-            <tr>
-                <td style="border:none;" >
-                    <span style="color:#00FA9A;" id="ital">MINIMALIST <span style="color:darkmagenta;" class="hide">DESIGNS</span></span>
-                </td>
-            </tr>
-        </table>
-  </div>
-  <div class="box"></div>
-</div>
-        
-    </header>
-    
-  <div class="card-container">
-    <div class="card"><img src="four.jpeg" >
-        <form id="whatsapp-form-1" class="whatsapp-form">
-            <input type="text" class="message-input" value="vans (₦ 8,000)" readonly>
-        <button style="margin-top: 3px;" type="submit" class="order" data-phone="+2348137358138">place order</button>
-    </form>
+	<div class="top-nav">
+		<div class="logo">
+			<div class="big-box">
+				<div class="small-box">
+					<h2>T-JOS</h2>
+				</div>
+			</div>
+		</div>
+		<div class="top-media">
+			<div class="top-big-screen">
+				dsl sdomjDS ;moskmo S;oksDO
+			</div>
+			<div class="top-small-screen">
+				<div class="top-small">
+					<img onclick="dropDisplay()" style="float: right;margin-right: 10px;" src="assets/menu-small.png">
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="drop-down" class="drop-down">
+		
+	</div>
+	<div class="main-body">
+		<h2 class="headline">Elevate Your Look – Shop Curated Thrift Now!</h2>
+		<div class="container">
+        <div class="responsive-div">Div 1</div>
+        <div class="responsive-div">Div 2</div>
+        <div class="responsive-div">Div 3</div>
+        <div class="responsive-div">Div 4</div>
     </div>
-    <div class="card"><img src="one.jpeg" >
-        <form id="whatsapp-form-1" class="whatsapp-form">
-            <input type="text" class="message-input" value="snickers (₦ 7,000)" readonly>
-        <button style="margin-top: 3px;" type="submit" class="order" data-phone="+2348137358138">place order</button>
-    </form>
-    </div>
-    <div class="card"><img src="two.jpeg" >
-        <form id="whatsapp-form-1" class="whatsapp-form">
-            <input type="text" class="message-input" value="jug (₦ 7,000)" readonly>
-        <button style="margin-top: 3px;" type="submit" class="order" data-phone="+2348137358138">place order</button>
-    </form>
-    </div>
-    <div class="card"><img src="one.jpeg" >
-        <form id="whatsapp-form-1" class="whatsapp-form">
-            <input type="text" class="message-input" value="snickers (₦ 7,000)" readonly>
-
-        <button style="margin-top: 3px;" type="submit" class="order" data-phone="+2348137358138">place order</button>
-    </form>
-    </div>
-    <div class="card"><img src="two.jpeg" >
-        <form id="whatsapp-form-1" class="whatsapp-form">
-            <input type="text" class="message-input" value="jug (₦ 7,000)" readonly>
-        <button style="margin-top: 3px;" type="submit" class="order" data-phone="+2348137358138">place order</button>
-    </form>
-    </div>
-    <div class="card"><img src="one.jpeg" >
-        <form id="whatsapp-form-1" class="whatsapp-form">
-            <input type="text" class="message-input" value="snickers (₦ 7,000)" readonly>
-        <button style="margin-top: 3px;" type="submit" class="order" data-phone="+2348137358138">place order</button>
-    </form>
-    </div>
-
-      <script>
-    const forms = document.getElementsByClassName("whatsapp-form");
-
-    function sendMessage(event) {
-      event.preventDefault();
-      const form = event.target;
-      const messageInput = form.querySelector(".message-input");
-      const userMessage = encodeURIComponent(messageInput.value);
-
-      // Add the extra string here (modify this according to your needs)
-    const extraString = "Hello! I want to buy "; // Replace [Extra Text] with your desired additional string
-    const fullMessage = extraString + userMessage;
-
-      const phoneNumber = form.querySelector("button").getAttribute("data-phone");
-      const whatsappLink = `https://api.whatsapp.com/send?phone=${phoneNumber}&text=${fullMessage}`;
-      window.open(whatsappLink, "_blank");
-    }
-
-    for (let i = 0; i < forms.length; i++) {
-      forms[i].addEventListener("submit", sendMessage);
-    }
-  </script>
-    
-  </div>
-
+	</div>
+	<script type="text/javascript">
+		function dropDisplay() {
+			if (document.getElementById("drop-down").style.display == "block")
+			{
+            document.getElementById("drop-down").style.display = "none";
+        }else
+        {
+        	document.getElementById("drop-down").style.display = "block";
+        }
+        }
+	</script>
 </body>
 </html>
